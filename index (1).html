@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the portfolio of Toniok Lekakeny, a Kenyan ICT professional and JOOUST graduate working in web development and data analysis while learning cybersecurity in public.">
+  <meta name="theme-color" content="#05080b">
+  <title>Toniok Lekakeny | Web Developer, Data Analyst &amp; Cybersecurity Learner</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #05080b;
+      --panel: #0b1117;
+      --panel-2: #0e161d;
+      --line: #1c303a;
+      --cyan: #56e6ed;
+      --cyan-dim: #9aeef0;
+      --gold: #f3c969;
+      --text: #e7f0f2;
+      --muted: #a0b0b8;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --width: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 85% 4%, rgba(29, 113, 124, .14), transparent 34rem), var(--bg);
+      color: var(--text);
+      font: 16px/1.7 var(--sans);
+    }
+    a { color: var(--cyan); text-underline-offset: .24em; }
+    a:hover { color: var(--gold); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 5;
+      border-bottom: 1px solid rgba(86, 230, 237, .16);
+      background: rgba(5, 8, 11, .92); backdrop-filter: blur(12px);
+    }
+    .nav { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { color: var(--cyan); font: 700 .88rem var(--mono); text-decoration: none; letter-spacing: .04em; }
+    .nav-links { display: flex; gap: .9rem; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { color: var(--muted); font: .72rem var(--mono); text-decoration: none; }
+    .nav-links a:hover { color: var(--cyan); }
+    main { overflow: hidden; }
+    section { padding: 4.25rem 0; border-bottom: 1px solid rgba(86, 230, 237, .1); }
+    .hero { min-height: 79vh; display: grid; align-items: center; padding: 5rem 0 4.5rem; }
+    .eyebrow, .section-tag, .terminal-label { color: var(--gold); font: 700 .76rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow::before { content: "> "; color: var(--cyan); }
+    h1, h2, h3, .mono { font-family: var(--mono); }
+    h1 { max-width: 900px; margin: .9rem 0 .6rem; color: var(--text); font-size: clamp(2.5rem, 10vw, 5.6rem); line-height: 1.06; letter-spacing: -.065em; }
+    h1 span { color: var(--cyan); }
+    .role { margin: 0 0 1rem; color: var(--gold); font: 600 clamp(1rem, 3.4vw, 1.35rem)/1.5 var(--mono); }
+    .hero-copy { max-width: 720px; color: var(--muted); font-size: 1.06rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .65rem 1rem; border: 1px solid var(--cyan); border-radius: 4px; color: var(--cyan); font: 700 .82rem var(--mono); text-decoration: none; transition: .18s ease; }
+    .button.primary { background: var(--cyan); color: #031014; }
+    .button:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
+    .button.primary:hover { background: var(--gold); color: #11100a; }
+    .hero-note { margin-top: 1.5rem; color: #7f969f; font: .75rem var(--mono); }
+    .hero-note span { color: var(--cyan); }
+    .section-head { margin-bottom: 1.65rem; }
+    .section-tag { display: inline-block; margin-bottom: .35rem; }
+    h2 { margin: 0; color: var(--text); font-size: clamp(1.7rem, 5vw, 2.35rem); line-height: 1.2; letter-spacing: -.04em; }
+    h2::before { content: "// "; color: var(--cyan); }
+    h3 { margin: 0 0 .4rem; color: var(--cyan-dim); font-size: 1.06rem; line-height: 1.4; }
+    p { margin: .4rem 0 0; color: var(--muted); }
+    .about-copy { max-width: 820px; font-size: 1.05rem; }
+    .timeline { display: grid; gap: 1rem; }
+    .card { padding: 1.2rem; border: 1px solid var(--line); border-radius: 7px; background: linear-gradient(145deg, rgba(14, 22, 29, .94), rgba(8, 13, 17, .92)); }
+    .meta { margin: .1rem 0 .65rem; color: var(--gold); font: .78rem/1.6 var(--mono); }
+    .project-grid, .blog-grid, .money-grid { display: grid; gap: 1rem; }
+    .project-card { display: flex; flex-direction: column; min-height: 218px; }
+    .project-card p { flex: 1; }
+    .project-links { margin-top: 1rem; color: #8ea2aa; font: .74rem/1.8 var(--mono); }
+    .placeholder { color: var(--gold); }
+    .skills-list { display: grid; gap: .75rem; }
+    .skill-row { padding: .9rem 1rem; border-left: 2px solid var(--cyan); background: rgba(14, 22, 29, .7); }
+    .skill-row strong { display: block; margin-bottom: .18rem; color: var(--gold); font: 700 .8rem var(--mono); }
+    .skill-row span { color: var(--muted); }
+    .starter-list { margin: 1rem 0 0; padding-left: 1.2rem; color: var(--cyan-dim); }
+    .starter-list li { padding: .25rem 0; }
+    .contact-panel { padding: 1.3rem; border: 1px solid rgba(86, 230, 237, .32); border-radius: 7px; background: linear-gradient(130deg, rgba(20, 52, 59, .26), rgba(12, 16, 20, .7)); }
+    .contact-items { display: grid; gap: .85rem; margin-top: 1.3rem; }
+    .contact-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; color: var(--muted); }
+    .contact-item b { min-width: 84px; color: var(--gold); font: 700 .8rem var(--mono); }
+    .money-grid { margin-top: 1rem; }
+    .small-note { color: #84969d; font-size: .82rem; }
+    footer { padding: 2rem 0 2.5rem; }
+    .footer-inner { display: grid; gap: .65rem; }
+    .footer-copy { color: #82949c; font: .76rem/1.8 var(--mono); }
+    .socials { display: flex; flex-wrap: wrap; gap: .55rem 1rem; font: .76rem var(--mono); }
+    .socials a { color: var(--muted); }
+    .socials a:hover { color: var(--cyan); }
+    .backtop { margin-left: auto; color: var(--cyan); font: .75rem var(--mono); text-decoration: none; }
+    @media (min-width: 700px) {
+      .wrap { width: min(var(--width), calc(100% - 3.5rem)); }
+      .nav-links { gap: 1.15rem; }
+      .nav-links a { font-size: .76rem; }
+      section { padding: 5.6rem 0; }
+      .hero { min-height: 84vh; }
+      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-grid, .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .money-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .contact-panel { padding: 2rem; }
+      .contact-items { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr auto; align-items: center; }
+      .footer-copy:last-of-type { grid-column: 1; }
+      .socials { justify-content: flex-end; grid-column: 2; grid-row: 1 / span 2; }
+    }
+    @media (min-width: 980px) {
+      .project-grid, .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .nav-links { gap: 1.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">TL<span aria-hidden="true">_</span></a>
+      <div class="nav-links">
+        <a href="#about">about</a><a href="#experience">experience</a><a href="#projects">projects</a><a href="#skills">skills</a><a href="#contact">contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">portfolio / online</div>
+        <h1>Toniok <span>Lekakeny</span></h1>
+        <p class="role">Web Developer &amp; Data Analyst | Learning Cybersecurity in Public</p>
+        <p class="hero-copy">I build for the web, work with data, and share my cybersecurity learning journey one practical step at a time. Follow along for clear, beginner-friendly lessons and real project notes.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View My Projects <span aria-hidden="true">→</span></a>
+          <a class="button" href="#contact">Contact Me <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-note"><span>+</span> Web development · Data analysis · Cybersecurity learning</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">01 / profile</span><h2>About</h2></div>
+        <p class="about-copy">I’m Toniok Lekakeny, a Kenyan ICT professional and BSc ICT graduate from Jaramogi Oginga Odinga University of Science and Technology (JOOUST). My experience includes web development and data analysis at the Uwezo Fund Oversight Board, as well as ICT support at Value Digital Co. Limited. I’m continuing to grow my technical skills by building practical projects and learning cybersecurity in public, with a focus on clear explanations, hands-on practice, and sharing what I learn from the beginning.</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">02 / work history</span><h2>Experience</h2></div>
+        <div class="timeline">
+          <article class="card">
+            <h3>Web Developer &amp; Data Analyst</h3>
+            <div class="meta">Uwezo Fund Oversight Board | January 2023–Present</div>
+            <p>I work across web development and data analysis, applying my ICT background to digital and data-focused work. This role continues to build my experience solving practical technology and information challenges.</p>
+          </article>
+          <article class="card">
+            <h3>ICT Assistant</h3>
+            <div class="meta">Value Digital Co. Limited | May 2022–March 2023</div>
+            <p>I supported day-to-day ICT work as an ICT Assistant, gaining practical experience in a professional technology environment and building a foundation for my continued growth in web development, data, and cybersecurity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">03 / selected work</span><h2>Projects</h2></div>
+        <div class="project-grid">
+          <article class="card project-card">
+            <h3>Candlestick Patterns: Beginner Education Carousel Series</h3>
+            <p>Short visual lessons that explain candlestick patterns in plain language for people learning forex basics.</p>
+            <div class="project-links"><span class="placeholder">[PLACEHOLDER: carousel images or post link]</span><br><span class="placeholder">[PLACEHOLDER: project write-up link]</span></div>
+          </article>
+          <article class="card project-card">
+            <h3>Forex Basics: Daily Reel Series</h3>
+            <p>A daily short-form learning series sharing beginner-friendly forex concepts, lessons, and progress.</p>
+            <div class="project-links"><span class="placeholder">[PLACEHOLDER: reel playlist or social profile link]</span><br><span class="placeholder">[PLACEHOLDER: project write-up link]</span></div>
+          </article>
+          <article class="card project-card">
+            <h3>Kali Linux: Day-by-Day Learning Series</h3>
+            <p>A public learning log documenting my Kali Linux journey, commands I practise, and beginner takeaways.</p>
+            <div class="project-links"><span class="placeholder">[PLACEHOLDER: reel playlist or social profile link]</span><br><span class="placeholder">[PLACEHOLDER: project write-up link]</span></div>
+          </article>
+          <article class="card project-card">
+            <h3>Home Network Hardening Write-up</h3>
+            <p>A practical account of steps taken to harden my home Wi-Fi, including WPA2, a hidden SSID, and locking down the router admin access.</p>
+            <div class="project-links"><span class="placeholder">[PLACEHOLDER: screenshots with sensitive details removed]</span><br><span class="placeholder">[PLACEHOLDER: write-up link]</span></div>
+          </article>
+          <article class="card project-card">
+            <h3>This portfolio website</h3>
+            <p>Built this single-page portfolio from scratch with inline CSS, no frameworks, and deployed it live on GitHub Pages. Proof that I ship, not just study. You can view the source of this very page as the reference.</p>
+            <div class="project-links"><span class="placeholder">[PLACEHOLDER: demo or repository link]</span><br><span class="placeholder">[PLACEHOLDER: project write-up link]</span></div>
+          </article>
+          <article class="card project-card">
+            <h3>Networking fundamentals lab notes</h3>
+            <p>Worked through a full networking fundamentals course (IP addressing, routing, DNS, subnetting) and turned each module into practical lab notes. The same notes now feed my cybersecurity learning content.</p>
+            <div class="project-links"><span class="placeholder">[PLACEHOLDER: demo or repository link]</span><br><span class="placeholder">[PLACEHOLDER: project write-up link]</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">04 / toolkit</span><h2>Skills</h2></div>
+        <div class="skills-list">
+          <div class="skill-row"><strong>Web development</strong><span>HTML, CSS, JavaScript, Python, PHP, WordPress and GitHub</span></div>
+          <div class="skill-row"><strong>Data analysis</strong><span>Excel, SQL, Python, dashboards and reporting</span></div>
+          <div class="skill-row"><strong>Cybersecurity learning</strong><span>Kali Linux fundamentals, beginner lab practice, home network hardening</span></div>
+          <div class="skill-row"><strong>Professional strengths</strong><span>Problem solving, documentation, working with deadlines and learning fast</span></div>
+          <div class="skill-row"><strong>Currently learning</strong><span>Cybersecurity fundamentals and practical Kali Linux skills</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">05 / say hello</span><h2>Contact</h2></div>
+        <div class="contact-panel">
+          <h3>Let’s connect</h3>
+          <p>Have a project, opportunity, or question? Send me a message and tell me what you’re working on.</p>
+          <div class="contact-items">
+            <div class="contact-item"><b>WhatsApp</b><span class="placeholder"><a href="https://wa.me/254707762837">+254 707 762 837</a></span></div>
+            <div class="contact-item"><b>Email</b><span class="placeholder"><a href="mailto:tlekakeny@gmail.com">tlekakeny@gmail.com</a></span></div>
+            <div class="contact-item"><b>CV</b><span><a href="assets/Toniok-Lekakeny-CV.pdf">Download my CV</a> </span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">06 / field notes</span><h2>Notes from building and learning</h2></div>
+        <p>Practical notes from my web development, data, forex education, and cybersecurity learning journeys. I share what I’m practising, explain ideas in beginner-friendly language, and document lessons from real projects.</p>
+        <div class="blog-grid" style="margin-top:1.25rem">
+          <article class="card"><div class="meta">STARTER POST 01</div><h3>Candlestick Patterns for Beginners: What I’m Learning and How I Explain Them</h3></article>
+          <article class="card"><div class="meta">STARTER POST 02</div><h3>My Daily Forex Learning Routine: Lessons from the Reel Series</h3></article>
+          <article class="card"><div class="meta">STARTER POST 03</div><h3>Kali Linux Day by Day: Beginner Commands, Practice, and Progress</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="monetization">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">07 / work with me</span><h2>Work with me and future resources</h2></div>
+        <div class="money-grid">
+          <article class="card"><h3>Digital products</h3><p>Beginner-friendly guides and resources are in development. Planned topics include a Kali Linux starter guide and a forex learning checklist.</p><p class="small-note placeholder">[PLACEHOLDER: add product name, description, price, and purchase link when ready]</p></article>
+          <article class="card"><h3>Useful learning resources</h3><p>I may share links to tools and learning platforms I use. Some links may be affiliate links, which means I may earn a commission if you sign up or make a purchase, at no extra cost to you.</p><p class="small-note placeholder">[PLACEHOLDER: add only active affiliate links and disclose each relationship clearly]</p></article>
+          <article class="card"><h3>Websites for local SMEs</h3><p>Need a simple website for your business? I’m available to discuss clean, practical websites for Kenyan small and medium-sized businesses, from a clear online presence to a straightforward way for customers to get in touch.</p><p class="small-note placeholder">[PLACEHOLDER: add services page or enquiry link when ready]</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-copy">© 2026 Toniok Lekakeny. Built with GitHub Pages.</div>
+      <div class="socials">
+        <span class="placeholder"><a href="https://github.com/ericktoniok">github.com/ericktoniok</a></span>
+        <span class="placeholder">[PLACEHOLDER: LinkedIn profile link]</span>
+        <span class="placeholder"><a href="https://instagram.com/geminii.fx">@geminii.fx</a></span>
+        <span class="placeholder"><a href="https://instagram.com/hack_fromzero">@hack_fromzero</a></span>
+        <a href="https://beacons.ai/the_gemini">Forex learning resources: beacons.ai/the_gemini</a>
+      </div>
+      <div class="footer-copy">Web development · Data analysis · Cybersecurity learning</div>
+      <a class="backtop" href="#home">↑ back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
