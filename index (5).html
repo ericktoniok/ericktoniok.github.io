@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the portfolio of Toniok Lekakeny, a Kenyan ICT professional and JOOUST graduate working in web development and data analysis while learning cybersecurity in public.">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>Toniok Lekakeny | Web Developer, Data Analyst &amp; Cybersecurity Learner</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f7f9fc;
+      --surface: #fff;
+      --surface-soft: #f0f4f9;
+      --line: #dce4ee;
+      --navy: #10294b;
+      --blue: #1f5b9b;
+      --blue-bright: #2878c8;
+      --ink: #17283d;
+      --muted: #53657a;
+      --dark: #07131e;
+      --dark-panel: #0c1d2a;
+      --cyan: #67d9e7;
+      --cyan-soft: #a7eff3;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --width: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.25rem; }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.7 var(--sans); }
+    a { color: var(--blue); text-underline-offset: .22em; }
+    a:hover { color: var(--blue-bright); }
+    a:focus-visible { outline: 3px solid #82c8f4; outline-offset: 4px; border-radius: 3px; }
+    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(16, 41, 75, .1); background: rgba(255, 255, 255, .94); backdrop-filter: blur(14px); }
+    .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { color: var(--navy); font-weight: 800; font-size: .95rem; letter-spacing: -.03em; text-decoration: none; white-space: nowrap; }
+    .brand span { color: var(--blue-bright); }
+    .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: clamp(.65rem, 2.3vw, 1.5rem); }
+    .nav-links a { color: #354b65; font-size: .85rem; font-weight: 650; text-decoration: none; transition: color .18s ease; }
+    .nav-links a:hover { color: var(--blue-bright); }
+    main { overflow: hidden; }
+    section { padding: 4.5rem 0; }
+    .hero { min-height: min(760px, 82vh); display: grid; align-items: center; padding: 5.5rem 0; background: radial-gradient(ellipse at 87% 15%, rgba(40, 120, 200, .1), transparent 32rem), linear-gradient(180deg, #fff 0%, var(--page) 100%); }
+    .eyebrow, .section-tag { color: var(--blue); font-size: .76rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .55rem; }
+    .eyebrow::before { content: ""; width: 1.8rem; height: 2px; background: var(--blue-bright); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 900px; margin: 1rem 0 .5rem; color: var(--navy); font-size: clamp(2.8rem, 9vw, 5.7rem); line-height: 1.04; letter-spacing: -.065em; }
+    h1 span { color: var(--blue); }
+    .role { margin: 0 0 1rem; color: #29496d; font-size: clamp(1.05rem, 3vw, 1.4rem); font-weight: 700; line-height: 1.45; }
+    .hero-copy { max-width: 720px; margin: 1rem 0 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.12rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; min-height: 47px; padding: .7rem 1.1rem; border: 1px solid var(--blue); border-radius: 999px; color: var(--blue); font-size: .87rem; font-weight: 750; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease; }
+    .button.primary { background: var(--blue); color: #fff; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(25, 74, 126, .16); }
+    .button.primary:hover { background: var(--navy); color: #fff; }
+    .hero-note { margin-top: 1.4rem; color: #61748a; font-size: .83rem; font-weight: 600; }
+    .hero-note span { margin-right: .35rem; color: var(--blue-bright); }
+    .section-head { margin-bottom: 1.7rem; }
+    .section-tag { display: inline-block; margin-bottom: .4rem; }
+    h2 { margin-bottom: 0; color: var(--navy); font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -.045em; }
+    h3 { margin-bottom: .45rem; color: var(--navy); font-size: 1.08rem; line-height: 1.4; }
+    p { margin-bottom: 0; color: var(--muted); }
+    .about-copy { max-width: 850px; font-size: 1.06rem; }
+    #experience, #skills, #blog { background: var(--surface); }
+    .timeline, .project-grid, .blog-grid, .money-grid { display: grid; gap: 1rem; }
+    .card { padding: 1.25rem; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: 0 5px 20px rgba(20, 46, 79, .035); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .card:hover { transform: translateY(-3px); border-color: #bfd0e3; box-shadow: 0 13px 30px rgba(20, 46, 79, .09); }
+    .meta { margin: .05rem 0 .65rem; color: #55708e; font-size: .79rem; font-weight: 650; }
+    .project-card { display: flex; flex-direction: column; min-height: 220px; }
+    .project-card p { flex: 1; }
+    .project-links { margin-top: 1rem; color: #596f87; font-size: .78rem; line-height: 1.8; }
+    .placeholder { color: inherit; }
+    .skills-list { display: grid; gap: .75rem; }
+    .skill-row { padding: 1rem 1.1rem; border: 1px solid var(--line); border-left: 3px solid var(--blue-bright); border-radius: 9px; background: #fbfcfe; }
+    .skill-row strong { display: block; margin-bottom: .18rem; color: var(--navy); font-size: .88rem; }
+    .skill-row span { color: var(--muted); }
+
+    /* The dark feature panel is intentionally distinct from the professional light portfolio. */
+    .cyber-section { position: relative; isolation: isolate; overflow: hidden; background: var(--dark); color: #e4f2f6; }
+    .cyber-section::before { position: absolute; z-index: -1; inset: 0; content: ""; opacity: .18; background-image: linear-gradient(rgba(103, 217, 231, .09) 1px, transparent 1px), linear-gradient(90deg, rgba(103, 217, 231, .09) 1px, transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(90deg, #000, transparent 90%); }
+    .cyber-section .section-tag { color: var(--cyan); }
+    .cyber-section h2 { color: #f0f7fa; }
+    .cyber-section h2::before { content: "~/ "; color: var(--cyan); font: 500 .7em var(--mono); }
+    .cyber-intro { max-width: 760px; color: #b4c7d1; }
+    .terminal-window { overflow: hidden; margin-top: 1.6rem; border: 1px solid rgba(103, 217, 231, .28); border-radius: 14px; background: rgba(5, 16, 25, .88); box-shadow: 0 22px 60px rgba(0, 0, 0, .24); }
+    .terminal-bar { display: flex; align-items: center; gap: .45rem; min-height: 44px; padding: .65rem 1rem; border-bottom: 1px solid rgba(103, 217, 231, .17); background: rgba(15, 36, 49, .9); }
+    .terminal-dot { width: 8px; height: 8px; border-radius: 50%; background: #5a7585; }
+    .terminal-dot:first-child { background: #f08d83; }
+    .terminal-dot:nth-child(2) { background: #eacb78; }
+    .terminal-dot:nth-child(3) { background: #7dc59a; }
+    .terminal-label { margin-left: .55rem; color: #9ab4c1; font: .72rem var(--mono); letter-spacing: .04em; text-transform: none; }
+    .terminal-content { display: grid; gap: 1.2rem; padding: clamp(1.1rem, 4vw, 2rem); }
+    .terminal-content h3 { color: var(--cyan-soft); font: 650 1.05rem/1.45 var(--mono); }
+    .terminal-content p { color: #b4c7d1; }
+    .terminal-content a { color: var(--cyan); }
+    .terminal-content a:hover { color: #fff; }
+    .terminal-line { margin-bottom: .45rem; color: var(--cyan); font: .79rem/1.7 var(--mono); }
+    .terminal-line span { color: #90aab8; }
+    .starter-list { margin: .8rem 0 0; padding-left: 1.2rem; color: #b4c7d1; }
+    .starter-list li { padding: .2rem 0; }
+    .contact-panel { padding: 1.35rem; border: 1px solid #d4dfeb; border-radius: 16px; background: var(--surface); box-shadow: 0 12px 34px rgba(19, 54, 91, .06); }
+    .contact-panel h3 { font-size: 1.2rem; }
+    .contact-items { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.35rem; }
+    .contact-item { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+    .contact-item b { display: none; }
+    .contact-item .button { min-height: 43px; padding: .55rem .9rem; font-size: .8rem; }
+    .small-note { margin-top: .6rem; color: #65768a; font-size: .84rem; }
+    footer { padding: 2.1rem 0 2.5rem; border-top: 1px solid var(--line); background: #fff; }
+    .footer-inner { display: grid; gap: .75rem; }
+    .footer-copy { color: #607187; font-size: .78rem; }
+    .socials { display: flex; flex-wrap: wrap; gap: .55rem 1.1rem; font-size: .8rem; }
+    .socials a { color: #3a5777; font-weight: 600; text-decoration: none; }
+    .socials a:hover { color: var(--blue-bright); text-decoration: underline; }
+    .backtop { justify-self: start; color: var(--blue); font-size: .8rem; font-weight: 700; text-decoration: none; }
+    @media (min-width: 700px) {
+      .wrap { width: min(var(--width), calc(100% - 3.5rem)); }
+      section { padding: 5.5rem 0; }
+      .hero { min-height: 82vh; }
+      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-grid, .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .money-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .contact-panel { padding: 2rem; }
+      .footer-inner { grid-template-columns: 1fr auto; align-items: center; }
+      .footer-inner .socials { grid-column: 2; grid-row: 1 / span 2; justify-content: flex-end; }
+      .backtop { grid-column: 1 / -1; }
+      .terminal-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (min-width: 980px) {
+      .project-grid, .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      .nav { align-items: flex-start; flex-direction: column; justify-content: center; gap: .1rem; padding-block: .55rem; }
+      .nav-links { width: 100%; justify-content: space-between; gap: .35rem; }
+      .nav-links a { font-size: .76rem; }
+      .hero { min-height: 72vh; padding: 4rem 0; }
+      section { padding: 3.6rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">Toniok <span>Lekakeny</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">ICT professional · Kenya</div>
+        <h1>Toniok <span>Lekakeny</span></h1>
+        <p class="role">Web Developer &amp; Data Analyst | Learning Cybersecurity in Public</p>
+        <p class="hero-copy">I build for the web, work with data, and share my cybersecurity learning journey one practical step at a time. Follow along for clear, beginner-friendly lessons and real project notes.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View My Projects <span aria-hidden="true">→</span></a>
+          <a class="button" href="#contact">Contact Me <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-note"><span aria-hidden="true">●</span> Web development · Data analysis · Cybersecurity learning</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">01 / Profile</span><h2>About</h2></div>
+        <p class="about-copy">I’m Toniok Lekakeny, a Kenyan ICT professional and BSc ICT graduate from Jaramogi Oginga Odinga University of Science and Technology (JOOUST). My experience includes web development and data analysis at the Uwezo Fund Oversight Board, as well as ICT support at Value Digital Co. Limited. I’m continuing to grow my technical skills by building practical projects and learning cybersecurity in public, with a focus on clear explanations, hands-on practice, and sharing what I learn from the beginning. I also share beginner-friendly forex education on <a href="https://www.tiktok.com/@geminii.fx">TikTok as @geminii.fx</a>.</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">02 / Work history</span><h2>Experience</h2></div>
+        <div class="timeline">
+          <article class="card">
+            <h3>Web Developer &amp; Data Analyst</h3>
+            <div class="meta">Uwezo Fund Oversight Board | January 2023–Present</div>
+            <p>I work across web development and data analysis, applying my ICT background to digital and data-focused work. This role continues to build my experience solving practical technology and information challenges.</p>
+          </article>
+          <article class="card">
+            <h3>ICT Assistant</h3>
+            <div class="meta">Value Digital Co. Limited | May 2022–March 2023</div>
+            <p>I supported day-to-day ICT work as an ICT Assistant, gaining practical experience in a professional technology environment and building a foundation for my continued growth in web development, data, and cybersecurity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">03 / Selected work</span><h2>Projects</h2></div>
+        <div class="project-grid">
+          <article class="card project-card">
+            <h3>Candlestick Patterns: Beginner Education Carousel Series</h3>
+            <p>Short visual lessons that explain candlestick patterns in plain language for people learning forex basics.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Forex Basics: Daily Reel Series</h3>
+            <p>A daily short-form learning series sharing beginner-friendly forex concepts, lessons, and progress.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Kali Linux: Day-by-Day Learning Series</h3>
+            <p>A public learning log documenting my Kali Linux journey, commands I practise, and beginner takeaways.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Home Network Hardening Write-up</h3>
+            <p>A practical account of steps taken to harden my home Wi-Fi, including WPA2, a hidden SSID, and locking down the router admin access.</p>
+          </article>
+          <article class="card project-card">
+            <h3>This portfolio website</h3>
+            <p>Built this single-page portfolio from scratch with inline CSS, no frameworks, and deployed it live on GitHub Pages. Proof that I ship, not just study. You can view the source of this very page as the reference.</p>
+          </article>
+          <article class="card project-card">
+            <h3>Networking fundamentals lab notes</h3>
+            <p>Worked through a full networking fundamentals course (IP addressing, routing, DNS, subnetting) and turned each module into practical lab notes. The same notes now feed my cybersecurity learning content.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cyber-section" id="cybersecurity-journey">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">04 / Learning in public</span><h2>Cybersecurity Journey</h2></div>
+        <p class="cyber-intro">Hack From Zero is my public cybersecurity learning journey: practical beginner work, clear explanations, and receipts, not hype. I document what I practise and share what I learn as I build my foundations.</p>
+        <div class="terminal-window" aria-label="Cybersecurity learning journey terminal-style feature">
+          <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-label">hack-from-zero / field-notes</span></div>
+          <div class="terminal-content">
+            <article>
+              <div class="terminal-line"><span>toniok@learning-lab:~$</span> journey --status</div>
+              <h3>Hack From Zero</h3>
+              <p>A public learning log documenting my Kali Linux journey, commands I practise, and beginner takeaways. I share hands-on practice and approachable cybersecurity learning on <a href="https://instagram.com/hack_fromzero">Instagram @hack_fromzero</a>.</p>
+              <ul class="starter-list"><li>Kali Linux fundamentals and beginner lab practice</li><li>Networking fundamentals: IP addressing, routing, DNS, and subnetting</li><li>Lessons translated into practical lab notes and learning content</li></ul>
+            </article>
+            <article>
+              <div class="terminal-line"><span>toniok@learning-lab:~$</span> project --network-hardening</div>
+              <h3>Home Network Hardening</h3>
+              <p>A practical account of steps taken to harden my home Wi-Fi, including WPA2, a hidden SSID, and locking down the router admin access.</p>
+              <p class="terminal-line" style="margin-top:1rem"><span>focus:</span> secure configuration · practical notes · continuous learning</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">05 / Toolkit</span><h2>Skills</h2></div>
+        <div class="skills-list">
+          <div class="skill-row"><strong>Web development</strong><span>HTML, CSS, JavaScript, Python, PHP, WordPress and GitHub</span></div>
+          <div class="skill-row"><strong>Data analysis</strong><span>Excel, SQL, Python, dashboards and reporting</span></div>
+          <div class="skill-row"><strong>Cybersecurity learning</strong><span>Kali Linux fundamentals, beginner lab practice, home network hardening</span></div>
+          <div class="skill-row"><strong>Professional strengths</strong><span>Problem solving, documentation, working with deadlines and learning fast</span></div>
+          <div class="skill-row"><strong>Currently learning</strong><span>Cybersecurity fundamentals and practical Kali Linux skills</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">06 / Say hello</span><h2>Contact</h2></div>
+        <div class="contact-panel">
+          <h3>Let’s connect</h3>
+          <p>Have a project, opportunity, or question? Send me a message and tell me what you’re working on.</p>
+          <div class="contact-items">
+            <div class="contact-item"><b>WhatsApp</b><a class="button primary" href="https://wa.me/254707762837">WhatsApp <span aria-hidden="true">↗</span></a></div>
+            <div class="contact-item"><b>Email</b><a class="button" href="mailto:tlekakeny@gmail.com">Email me <span aria-hidden="true">↗</span></a></div>
+            <div class="contact-item"><b>LinkedIn</b><a class="button" href="https://www.linkedin.com/in/toniok-lekakeny-2bb369240" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
+            <div class="contact-item"><b>Telegram</b><a class="button" href="https://t.me/realgeminii" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a></div>
+            <div class="contact-item"><b>CV</b><a class="button" href="assets/Toniok_Lekakeny_CV_Kenya_ICT.pdf">Download my CV <span aria-hidden="true">↓</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">07 / Field notes</span><h2>Notes from building and learning</h2></div>
+        <p>Practical notes from my web development, data, forex education, and cybersecurity learning journeys. I share what I’m practising, explain ideas in beginner-friendly language, and document lessons from real projects.</p>
+        <div class="blog-grid" style="margin-top:1.25rem">
+          <article class="card"><div class="meta">STARTER POST 01</div><h3>Candlestick Patterns for Beginners: What I’m Learning and How I Explain Them</h3></article>
+          <article class="card"><div class="meta">STARTER POST 02</div><h3>My Daily Forex Learning Routine: Lessons from the Reel Series</h3></article>
+          <article class="card"><div class="meta">STARTER POST 03</div><h3>Kali Linux Day by Day: Beginner Commands, Practice, and Progress</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="monetization">
+      <div class="wrap">
+        <div class="section-head"><span class="section-tag">08 / Work with me</span><h2>Work with me and future resources</h2></div>
+        <div class="money-grid">
+          <article class="card"><h3>Digital products</h3><p>Beginner-friendly guides and resources are in development. Planned topics include a Kali Linux starter guide and a forex learning checklist.</p></article>
+          <article class="card"><h3>Useful learning resources</h3><p>I may share links to tools and learning platforms I use. Some links may be affiliate links, which means I may earn a commission if you sign up or make a purchase, at no extra cost to you.</p></article>
+          <article class="card"><h3>Websites for local SMEs</h3><p>Need a simple website for your business? I’m available to discuss clean, practical websites for Kenyan small and medium-sized businesses, from a clear online presence to a straightforward way for customers to get in touch.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-copy">© 2026 Toniok Lekakeny. Built with GitHub Pages.</div>
+      <div class="socials">
+        <a href="https://github.com/ericktoniok">GitHub</a>
+        <a href="https://www.linkedin.com/in/toniok-lekakeny-2bb369240" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://t.me/realgeminii" target="_blank" rel="noopener noreferrer">Telegram @realgeminii</a>
+        <a href="https://www.tiktok.com/@geminii.fx">TikTok @geminii.fx</a>
+        <a href="https://instagram.com/hack_fromzero">Instagram @hack_fromzero</a>
+        <a href="https://beacons.ai/the_gemini">Forex learning resources: beacons.ai/the_gemini</a>
+      </div>
+      <div class="footer-copy">Web development · Data analysis · Cybersecurity learning</div>
+      <a class="backtop" href="#home">↑ Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
